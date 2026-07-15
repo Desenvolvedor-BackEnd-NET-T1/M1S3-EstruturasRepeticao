@@ -15,15 +15,14 @@
 //...
 // 2 x 20 = 40
 
-using System.Reflection;
 
-int tabuada = 0; 
+// int tabuada = 0; 
 
-while(tabuada <= 20)
-{
-    Console.WriteLine($"2 x {tabuada} =  {tabuada *2 }");
-    tabuada++; 
-}
+// while(tabuada <= 20)
+// {
+//     Console.WriteLine($"2 x {tabuada} =  {tabuada *2 }");
+//     tabuada++; 
+// }
 
 
 // Crie um validador de entrada de dados 
@@ -59,12 +58,116 @@ while(tabuada <= 20)
 ///Validação completa de input 
 
 
-Console.WriteLine("Digite um numero:");
-bool ehNumero =  int.TryParse(Console.ReadLine(), out int num);
-while (!ehNumero)
-{
-    Console.WriteLine("Valor invalido, Digite um numero: ");
-    ehNumero =  int.TryParse(Console.ReadLine(), out num);
-}
+// Console.WriteLine("Digite um numero:");
+// bool ehNumero =  int.TryParse(Console.ReadLine(), out int num);
+// while (!ehNumero)
+// {
+//     Console.WriteLine("Valor invalido, Digite um numero: ");
+//     ehNumero =  int.TryParse(Console.ReadLine(), out num);
+// }
 
-Console.WriteLine("O numero digitado foi " + num);
+// Console.WriteLine("O numero digitado foi " + num);
+// //While valida e depois executa o bloco. 
+
+// //Do While primeiro executa o bloco e depois valida 
+// int num2; 
+// do 
+// {
+//     Console.WriteLine(" Digite um numero: ");
+//     ehNumero =  int.TryParse(Console.ReadLine(), out num2);
+// }while (!ehNumero);
+
+// Console.WriteLine("O numero digitado foi " + num2);
+
+
+// for ele tem o objeto de interar e ja tem a estrututa enchuta. 
+
+// for (int i = 0; i<30; i++)
+// {
+//     Console.WriteLine(i);
+// }
+
+
+
+
+// for(int i = 0 ;  i <= 20 ; i++) // (i++) == (i = i + 1)  == (i +=1 )
+// {
+//     Console.WriteLine($"2 x {i} =  {i *2 }");
+// }
+
+
+//Calcule o fatorial de  N (obtido do usuario) 
+// utilizando estruturas de repetição 
+// (Multiplicar todos os numeros antessesores positivos)
+
+// 5 = 5*4*3*2*1  = 120
+
+
+//receber o valor;
+
+Console.WriteLine("Digite um numero para calcular o fatorial: ");
+int fatorial = int.Parse(Console.ReadLine());
+
+
+//while 
+int fatorialWhile = fatorial;
+int resultadoWhile = 1;
+while (fatorialWhile > 1)
+{
+    resultadoWhile =  resultadoWhile * fatorialWhile;
+    fatorialWhile--; 
+}
+Console.WriteLine("resultado do fatorial de " + fatorial + "  é " + resultadoWhile);
+
+//do while 
+int doFatorial = fatorial;
+int doResultado = 1;
+
+do
+{
+    doResultado = doResultado * doFatorial;
+    doFatorial --; 
+    
+}while(doFatorial > 1);
+Console.WriteLine("resultado do fatorial de " + fatorial + "  é " + doResultado);
+
+
+//for 
+int forResultado = 1 ;
+for (int forFatorial = fatorial; forFatorial >1; forFatorial--)
+{
+    forResultado = forResultado * forFatorial;
+}
+Console.WriteLine("resultado do fatorial de " + fatorial + "  é " + forResultado);
+
+
+//for 
+
+int resultado =1 ;
+for (int i = 1; i <= fatorial; i++)
+{
+    resultado = resultado *i;
+}
+Console.WriteLine("resultado do fatorial de " + fatorial + "  é " + resultado);
+
+
+
+// 5     5*4*3*2*1
+// resultado  *5  
+// resultado *4 
+//
+
+
+// 4 - fatorial com "for" -- Codigo de referencia! Logica esta diferente porem bem otimizada.
+Console.WriteLine("Informe um número inteiro para ver seu fatorial: ");
+int numero = Convert.ToInt32(Console.ReadLine());
+
+ fatorial = numero;
+for (int i = 1; i < numero; i++)
+{
+    fatorial *= i;  
+}
+Console.WriteLine($"O resultado de {numero}! é igual a {fatorial}");
+
+
+
